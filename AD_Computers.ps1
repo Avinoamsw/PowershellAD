@@ -29,7 +29,7 @@ $Lastyear = (Get-Date).AddYears(-1)
 LogWrite "Getting computers list..."
 Try{$Computers = Get-ADComputer -Properties Name -Filter {enabled -eq "true" -and OperatingSystem -like "*Windows 10*" -and whenCreated -ge $Lastyear }}
 catch{
-    LogWrite "Failed to get Comupters list."
+    LogWrite "Failed to get Computers list."
     exit
 }
 if ($Computers.count -eq 0)
@@ -38,7 +38,7 @@ if ($Computers.count -eq 0)
     exit
 }
 LogWrite "Computers list created successFully."
-LogWrite "Gethring Data about the computers..."
+LogWrite "gathering Data about the computers..."
 $Records = @{}
 
 
